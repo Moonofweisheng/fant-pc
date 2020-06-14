@@ -10,4 +10,5 @@ import ListView from "@/components/list-view/ListView.vue";
     }
 })
 export default class BasicList extends Vue {
+    
 }
