@@ -1,0 +1,68 @@
+<template>
+    <div class="list-view">
+        <div class="toolbar">
+            <el-alert class="selected-btn" type="info" v-if="selectable" :closable="false">
+                <span>已选中</span>
+                <span class="num">{{internalSelected.length}}</span>
+                <span>行</span>
+                <el-button type="text" @click="doCancel()">取消选中</el-button>
+            </el-alert>
+            <slot name="actions" :selected="internalSelected"></slot>
+            <div class="icons">
+                <slot name="icons"></slot>
+            </div>
+        </div>
+        <el-table ref="table" :data="data" :row-key="rowKey" :stripe="stripe" :emptyText="emptyText"
+            :default-sort="internalDefaultSort" @selection-change="doSelectionChange" @sort-change="doSortChange">
+            <el-table-column v-if="selectable" type="selection" :selectable="checkSelectable"
+                :reserve-selection="reserveSelection"></el-table-column>
+            <slot></slot>
+        </el-table>
+        <el-pagination class="pagination" background layout="sizes, total, prev, pager, next"
+            v-if="pageable&&!smallPage" :current-page.sync="internalPage" :page-sizes="[10, 30, 50, 100]"
+            :page-size="queryParam.limit" :total="total" @size-change="doSizeChange" @current-change="doPageChange">
+        </el-pagination>
+
+        <el-pagination class="pagination" background layout="jumper,prev,next,total" v-if="pageable&&smallPage"
+            :current-page.sync="internalPage" :page-size="queryParam.limit" :total="total" @size-change="doSizeChange"
+            @current-change="doPageChange">
+        </el-pagination>
+    </div>
+</template>
+<script lang="ts" src="./ListView.ts"></script>
+<style lang="scss" scoped>
+@import "~fant2/packages/theme-chalk/src/common/var.scss";
+
+.list-view {
+    .toolbar {
+        display: flex;
+        align-items: center;
+        padding-bottom: 10px;
+    }
+    .selected-btn {
+        width: auto;
+        display: inline-block;
+        margin-right: 10px;
+        padding: 4px 12px;
+        font-size: $--button-small-font-size;
+        /deep/ .el-button--text {
+            padding: 0;
+            margin-left: 5px;
+        }
+    }
+    .num {
+        color: $--color-primary;
+        margin: 0 5px;
+    }
+    .pagination {
+        text-align: right;
+        margin-top: 10px;
+    }
+    /deep/.btn-prev {
+        background: #ffffff;
+    }
+    /deep/.btn-next {
+        background: #ffffff;
+    }
+}
+</style>
