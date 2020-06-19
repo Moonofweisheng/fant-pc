@@ -8,8 +8,12 @@ export default class BasicLayout extends Vue {
     get menus() {
         return [
             {
-                name: '基础模板', icon: 'iconfont ic-ldj-ic_order', index: 'order', hasSecMenu: true, children: [
-                    { name: '基础列表', url: '/basicList', index: 'basicList' },
+                name: '列表页', icon: 'iconfont el-icon-location', index: 'list', hasSecMenu: true, children: [
+                    { name: '基础列表', url: '/basicList', index: 'basicList' }
+                ]
+            },
+            {
+                name: '详情页', icon: 'iconfont el-icon-location', index: 'detail', hasSecMenu: true, children: [
                     { name: '基础详情', url: '/basicDetail', index: 'basicDetail' }
                 ]
             }

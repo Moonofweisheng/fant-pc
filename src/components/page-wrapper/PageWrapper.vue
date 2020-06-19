@@ -24,7 +24,6 @@
 <script lang='ts' src='./PageWrapper.ts'></script>
 
 <style lang='scss' scoped>
-@import "~fant2/packages/theme-chalk/src/common/var.scss";
 
 .page-wrapper {
     display: flex;
@@ -44,7 +43,7 @@
         font-size: 16px;
         font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
-        color: #242633;
+        color: $--color-text-primary;
         /deep/.el-tabs__header {
             margin: 0;
         }

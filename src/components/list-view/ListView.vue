@@ -31,8 +31,6 @@
 </template>
 <script lang="ts" src="./ListView.ts"></script>
 <style lang="scss" scoped>
-@import "~fant2/packages/theme-chalk/src/common/var.scss";
-
 .list-view {
     .toolbar {
         display: flex;

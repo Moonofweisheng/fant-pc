@@ -10,8 +10,6 @@
 <script lang='ts' src='./DetailView.ts'></script>
 
 <style lang='scss' scoped>
-@import "~fant2/packages/theme-chalk/src/common/var.scss";
-
 .detail-view {
     display: flex;
     flex-direction: column;

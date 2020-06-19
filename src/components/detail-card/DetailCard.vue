@@ -30,8 +30,6 @@
 <script lang='ts' src='./DetailCard.ts'></script>
 
 <style lang='scss'>
-@import "~fant2/packages/theme-chalk/src/common/var.scss";
-
 .detail-card {
     margin-bottom: 16px;
     .header {

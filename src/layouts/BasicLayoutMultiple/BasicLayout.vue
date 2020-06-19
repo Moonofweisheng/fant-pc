@@ -4,8 +4,7 @@
         </div>
         <div class="basic-layout-body">
             <div class="basic-layout-sider">
-                <el-menu default-active="2" class="el-menu-vertical-demo" unique-opened="true" @open="handleOpen" @close="handleClose" background-color="#242633"
-                    text-color="#79879E" active-text-color="#FFFFFF">
+                <el-menu default-active="2" class="el-menu-vertical-demo" unique-opened="true" @open="handleOpen" @close="handleClose" active-text-color="#FFFFFF">
                     <el-submenu index="1">
                         <template slot="title">
                             <i class="el-icon-location"></i>
@@ -78,7 +77,7 @@
         .basic-layout-sider {
             width: 200px;
             min-height: calc(100vh - 64px);
-            background: #242633;
+            background: $--color-text-primary;
             .el-menu-vertical-demo {
                 width: 200px;
             }

@@ -1,5 +1,5 @@
 <template>
-    <PageWrapper>
+    <page-wrapper>
         <!-- 详情页眉 开始 -->
         <template slot="header">
             <!-- 页面标题或自定义内容（若使用标题，则需用span包裹） -->
@@ -16,9 +16,9 @@
 
         <!-- 详情主体 开始 -->
         <template slot="body">
-            <DetailView>
+            <detail-view>
                 <!-- 详情卡片 参数有showTag,title,type 具体用法可参照本页面及组件内注释 -->
-                <DetailCard type="success">
+                <detail-card type="success">
                     <template slot="left">
                         啊书法大赛发
                     </template>
@@ -50,9 +50,9 @@
                             </el-row>
                         </el-form>
                     </template>
-                </DetailCard>
+                </detail-card>
 
-                <DetailCard title="基础信息" :showTag="true">
+                <detail-card title="基础信息" :showTag="true">
                     <template slot="right">
                         <el-form>
                             <el-row>
@@ -100,8 +100,8 @@
                             </el-row>
                         </el-form>
                     </template>
-                </DetailCard>
-                <DetailCard title="商品信息" :showTag="true">
+                </detail-card>
+                <detail-card title="商品信息" :showTag="true">
                     <template slot="right">
                         <el-tabs v-model="sysState" @tab-click="doSearch">
                             <el-tab-pane label="全部订单" name="all"></el-tab-pane>
@@ -112,8 +112,7 @@
                             <el-tab-pane label="已完成" name="FINISHED"></el-tab-pane>
                             <el-tab-pane label="已取消" name="CANCELED"></el-tab-pane>
                         </el-tabs>
-                        <list-view ref="lineDataList" :selectable="false" :data="lineDataList" :total="lineTotal"
-                            @load="doOrderListLoad">
+                        <list-view ref="lineDataList" :selectable="false" :data="lineDataList" :total="lineTotal" @load="doOrderListLoad">
                             <el-table-column prop="gdName" label="商品信息">
                                 <template slot-scope="scope">{{ scope.row.gdName|empty }}</template>
                             </el-table-column>
@@ -138,11 +137,11 @@
                         </list-view>
                     </template>
 
-                </DetailCard>
-            </DetailView>
+                </detail-card>
+            </detail-view>
         </template>
         <!-- 详情主体表格 结束 -->
-    </PageWrapper>
+    </page-wrapper>
 </template>
 
 <script lang='ts' src='./BasicDetail.ts'></script>

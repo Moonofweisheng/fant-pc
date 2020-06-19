@@ -8,16 +8,17 @@ const routes: Array<RouteConfig> = [
         path: "/",
         name: "Home",
         component: () => import('../views/Home.vue'),
+        redirect:"/basicList",
         children: [
-            {
-                path: '/basicDetail', name: 'basicDetail',
-                meta: { title: '基础详情' },
-                component: () => import('../views/BasicDetail/BasicDetail.vue')
-            },
             {
                 path: '/basicList', name: 'basicList',
                 meta: { title: '基础列表' },
                 component: () => import('../views/BasicList/BasicList.vue')
+            },
+            {
+                path: '/basicDetail', name: 'basicDetail',
+                meta: { title: '基础详情' },
+                component: () => import('../views/BasicDetail/BasicDetail.vue')
             }
         ]
     },

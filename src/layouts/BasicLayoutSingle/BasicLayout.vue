@@ -4,8 +4,7 @@
             <div class="logo">
                 <img class="logo-img" src="@/assets/logo.png" alt="logo">
             </div>
-            <el-menu text-color="#FFF" background-color="#1E2337" class="sidebar" :collapse="isCollapse"
-                :unique-opened="false" :default-active="activeMenu">
+            <el-menu :collapse="isCollapse" :unique-opened="false" :default-active="activeMenu" background-color="#242633" text-color="#79879E" active-text-color="#FFFFFF">
                 <div v-for="(item,key) in menus" :key="key">
                     <router-link :to="item.url" v-if="item.children.length === 0">
                         <el-menu-item :index="item.index" ref="menuItem">
@@ -47,7 +46,10 @@
         width: 200px;
         min-height: 100vh;
         flex: 0 0 auto;
-        background: #242633;
+        background: $--color-text-primary;
+        a {
+            text-decoration: none !important;
+        }
         .logo {
             display: flex;
             justify-content: center;
@@ -61,6 +63,9 @@
         }
         .el-menu-vertical-demo {
             width: 200px;
+        }
+        /deep/.el-menu {
+            border: none;
         }
     }
 

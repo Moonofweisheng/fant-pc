@@ -1,5 +1,5 @@
 <template>
-    <PageWrapper>
+    <page-wrapper>
         <!-- 列表页眉 开始 -->
         <template slot="header">
             <!-- 页面标题或自定义内容（若使用标题，则需用span包裹） -->
@@ -119,7 +119,7 @@
             </list-view>
         </template>
         <!-- 列表主体表格 结束 -->
-    </PageWrapper>
+    </page-wrapper>
 </template>
 
 <script lang='ts' src='./BasicList.ts'></script>

@@ -30,7 +30,7 @@
 
 <script lang="ts" src="./QueryCondition.ts"></script>
 
-<style lang="scss" >
+<style lang="scss" scoped>
 .query-condition {
     padding: 0;
 

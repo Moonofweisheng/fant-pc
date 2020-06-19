@@ -1,14 +1,14 @@
 <template>
-    <BasicLayout>
+    <basic-layout>
         <template slot="main">
             <router-view></router-view>
         </template>
-    </BasicLayout>
+    </basic-layout>
 </template>
 
 <script>
 // @ is an alias to /src
-import BasicLayout from "@/layouts/BasicLayoutSimple/BasicLayout.vue";
+import BasicLayout from "@/layouts/BasicLayoutSingle/BasicLayout.vue";
 export default {
     name: "Home",
     components: {
