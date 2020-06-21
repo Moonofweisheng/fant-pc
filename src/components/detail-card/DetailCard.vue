@@ -55,6 +55,7 @@
             flex: 0 0 auto;
         }
         .card-right {
+            width: 100%;
             flex: 1 1 auto;
         }
     }

@@ -18,12 +18,12 @@
                 :reserve-selection="reserveSelection"></el-table-column>
             <slot></slot>
         </el-table>
-        <el-pagination class="pagination" background layout="sizes, total, prev, pager, next"
-            v-if="pageable&&!smallPage" :current-page.sync="internalPage" :page-sizes="[10, 30, 50, 100]"
-            :page-size="queryParam.limit" :total="total" @size-change="doSizeChange" @current-change="doPageChange">
+        <el-pagination class="pagination" layout="sizes, total, prev, pager, next" v-if="pageable&&!smallPage"
+            :current-page.sync="internalPage" :page-sizes="[10, 30, 50, 100]" :page-size="queryParam.limit"
+            :total="total" @size-change="doSizeChange" @current-change="doPageChange">
         </el-pagination>
 
-        <el-pagination class="pagination" background layout="jumper,prev,next,total" v-if="pageable&&smallPage"
+        <el-pagination class="pagination" layout="jumper,prev,next,total" v-if="pageable&&smallPage"
             :current-page.sync="internalPage" :page-size="queryParam.limit" :total="total" @size-change="doSizeChange"
             @current-change="doPageChange">
         </el-pagination>
@@ -31,6 +31,8 @@
 </template>
 <script lang="ts" src="./ListView.ts"></script>
 <style lang="scss" scoped>
+@import "~fant2/packages/theme-chalk/src/common/var.scss";
+
 .list-view {
     .toolbar {
         display: flex;
@@ -53,14 +55,10 @@
         margin: 0 5px;
     }
     .pagination {
-        text-align: right;
-        margin-top: 10px;
-    }
-    /deep/.btn-prev {
-        background: #ffffff;
-    }
-    /deep/.btn-next {
-        background: #ffffff;
+        height: 56px;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
     }
 }
 </style>

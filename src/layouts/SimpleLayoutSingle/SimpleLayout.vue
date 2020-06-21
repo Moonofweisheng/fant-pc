@@ -1,6 +1,7 @@
 <template>
     <div class="simple-layout">
         <header class="header">
+            <slot name="header"></slot>
         </header>
         <main class="main">
             <slot name="main"></slot>
@@ -12,12 +13,28 @@
 <style lang="scss" scoped>
 .simple-layout {
     display: flex;
+    flex-direction: column;
+    position: relative;
     width: 100%;
     min-height: 100%;
     .header {
         width: 100%;
         height: 64px;
+        box-sizing: border-box;
+        padding: 0 32px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         background: #ffffff;
+    }
+    .main {
+        margin: 0 auto;
+        width: 1200px;
+        padding: 20px;
+        height: calc(100% - 64px);
+        box-sizing: border-box;
+        background-color: #f0f2f6;
+        overflow: auto;
     }
 }
 </style>

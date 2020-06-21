@@ -7,29 +7,20 @@ const routes: Array<RouteConfig> = [
     {
         path: "/",
         name: "Home",
-        component: () => import('../views/Home.vue'),
-        redirect:"/basicList",
+        component: () => import('../views/Index/Index.vue'),
+        redirect: "/basicList",
         children: [
             {
                 path: '/basicList', name: 'basicList',
-                meta: { title: '基础列表' },
+                meta: { title: '基础列表', keepAlive: true },
                 component: () => import('../views/BasicList/BasicList.vue')
             },
             {
                 path: '/basicDetail', name: 'basicDetail',
-                meta: { title: '基础详情' },
+                meta: { title: '基础详情', keepAlive: false },
                 component: () => import('../views/BasicDetail/BasicDetail.vue')
             }
         ]
-    },
-    {
-        path: "/about",
-        name: "About",
-        // route level code-splitting
-        // this generates a separate chunk (about.[hash].js) for this route
-        // which is lazy-loaded when the route is visited.
-        component: () =>
-            import(/* webpackChunkName: "about" */ "../views/About.vue")
     }
 ];
 

@@ -12,7 +12,7 @@
 html,
 body {
     width: 100%;
-    height: 100%;
+    min-height: 100%;
     min-width: 1024px;
     overflow-x: auto;
     -webkit-font-smoothing: antialiased;
@@ -32,6 +32,6 @@ body {
     color: #2c3e50;
     background: #f0f2f5;
     font-size: 14px;
-    height: 100%;
+    min-height: 100vh;
 }
 </style>
