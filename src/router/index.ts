@@ -12,18 +12,18 @@ const routes: Array<RouteConfig> = [
         children: [
             {
                 path: '/basicList', name: 'basicList',
-                meta: { title: '基础列表', keepAlive: true },
+                meta: { title: '基础列表', keepAlive: true, parent: 'list' },
                 component: () => import('../views/BasicList/BasicList.vue')
             },
             {
                 path: '/basicDetail', name: 'basicDetail',
-                meta: { title: '基础详情', keepAlive: false },
+                meta: { title: '基础详情', keepAlive: false, parent: 'detail' },
                 component: () => import('../views/BasicDetail/BasicDetail.vue')
             },
             {
-                path: '/basicEdit', name: 'basicEdit',
-                meta: { title: '基础编辑', keepAlive: false },
-                component: () => import('../views/BasicEdit/BasicEdit.vue')
+                path: '/basicForm', name: 'basicForm',
+                meta: { title: '基础编辑', keepAlive: false, parent: 'form' },
+                component: () => import('../views/BasicForm/BasicForm.vue')
             }
         ]
     }

@@ -3,7 +3,7 @@
         <!-- 列表页眉 开始 -->
         <template slot="header">
             <!-- 页面标题或自定义内容（若使用标题，则需用span包裹，注释内容为选项卡示例） -->
-            <span>标题</span>
+            <span>基础列表</span>
             <!-- <el-tabs v-model="sysState" @tab-click="doSearch">
                 <el-tab-pane label="全部订单" name="all"></el-tab-pane>
                 <el-tab-pane label="待付款" name="CONFIRMED"></el-tab-pane>
@@ -30,8 +30,7 @@
             <query-condition @search="doSearch" @reset="doReset">
                 <template>
                     <el-col :span="8">
-                        <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd"
-                            placeholder="申请时间"></el-date-picker>
+                        <el-date-picker type="date" ref="applyDate" v-model="applyDate" value-format="yyyy-MM-dd" placeholder="申请时间"></el-date-picker>
                     </el-col>
                 </template>
             </query-condition>
@@ -40,11 +39,10 @@
 
         <!-- 列表主体表格 开始 -->
         <template slot="body">
-            <list-view ref="orderDataList" :selectable="false" :data="orderDataList" :total="orderTotal"
-                @load="doListLoad">
+            <list-view ref="orderDataList" :selectable="false" :data="orderDataList" :total="orderTotal" @load="doListLoad">
                 <el-table-column prop="flowNo" label="订单号">
                 </el-table-column>
-                <el-table-column prop="sysState" label="订单状态" align="center">
+                <el-table-column prop="sysState" label="订单状态">
                 </el-table-column>
                 <el-table-column prop="type" label="订单类型">
                 </el-table-column>
@@ -54,11 +52,11 @@
                 </el-table-column>
                 <el-table-column prop="consignee" label="收货人信息">
                 </el-table-column>
-                <el-table-column prop="realAmount" label="下单金额（元）" align="right">
+                <el-table-column prop="realAmount" label="下单金额（元）">
                 </el-table-column>
                 <el-table-column prop="created" label="下单时间">
                 </el-table-column>
-                <el-table-column label="操作" minWidth="150px">
+                <el-table-column label="操作">
                     <template slot-scope="scope">
                         <el-button type="text" @click="doOrderDtl(scope.row)">查看</el-button>
                     </template>

@@ -4,7 +4,7 @@
             <div class="logo">
                 <img class="logo-img" src="@/assets/logo.png" alt="logo">
             </div>
-            <el-menu :collapse="isCollapse" :unique-opened="false" :default-active="activeMenu" background-color="#242633" text-color="#79879E" active-text-color="#FFFFFF">
+            <el-menu :unique-opened="false" :default-active="activeMenu" background-color="#242633" text-color="#79879E" active-text-color="#FFFFFF">
                 <div v-for="(item,key) in menus" :key="key">
                     <router-link :to="item.url" v-if="item.children.length === 0">
                         <el-menu-item :index="item.index" ref="menuItem">
@@ -43,6 +43,7 @@
     display: flex;
     width: 100%;
     min-height: 100%;
+    overflow-x: hidden;
     .basic-layout-sider {
         width: 200px;
         min-height: 100vh;

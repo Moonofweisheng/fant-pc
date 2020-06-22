@@ -20,6 +20,6 @@ export default class BasicDetail extends Vue {
      * 去编辑
      */
     doEdit() {
-        this.$router.push('/basicEdit')
+        this.$router.push('/basicForm')
     }
 }
