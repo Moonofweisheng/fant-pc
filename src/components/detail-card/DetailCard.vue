@@ -37,13 +37,14 @@
         align-items: center;
         height: 40px;
         font-size: 14px;
+        line-height:0;
         font-family: PingFangSC-Medium, PingFang SC;
         font-weight: 500;
         color: $--color-text-primary;
         .header-tag {
             width: 3px;
             height: 12px;
-            background: #09a440;
+            background: $--color-primary;
             margin-right: 5px;
         }
     }

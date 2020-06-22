@@ -1,4 +1,5 @@
 <template>
+    <!-- 此处为布局容器组件，由layouts目录引入，可以选择切换不同的布局 -->
     <basic-layout>
         <template slot="header">
             <div class="header-left">
@@ -15,6 +16,8 @@
                 </el-dropdown-menu>
             </el-dropdown>
         </template>
+
+        <!-- 容器主体 -->
         <template slot="main">
             <keep-alive>
                 <router-view v-if="$route.meta.keepAlive"></router-view>

@@ -7,7 +7,7 @@
             <!-- 页眉标题 结束 -->
             <!-- 页眉按钮组（按钮为一个时，可以不用div包裹） 开始 -->
             <div>
-                <el-button type="primary" size="medium">编辑</el-button>
+                <el-button type="primary" size="medium" @click="doEdit">编辑</el-button>
                 <el-button type="primary" size="medium" @click="doBack">返回</el-button>
             </div>
             <!-- 页眉按钮组 结束 -->

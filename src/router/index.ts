@@ -19,6 +19,11 @@ const routes: Array<RouteConfig> = [
                 path: '/basicDetail', name: 'basicDetail',
                 meta: { title: '基础详情', keepAlive: false },
                 component: () => import('../views/BasicDetail/BasicDetail.vue')
+            },
+            {
+                path: '/basicEdit', name: 'basicEdit',
+                meta: { title: '基础编辑', keepAlive: false },
+                component: () => import('../views/BasicEdit/BasicEdit.vue')
             }
         ]
     }

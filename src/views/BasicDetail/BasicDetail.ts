@@ -8,7 +8,18 @@ import DetailCard from "@/components/detail-card/DetailCard.vue";
     components: { PageWrapper, DetailView, DetailCard, ListView }
 })
 export default class BasicDetail extends Vue {
-    doBack(){
+
+    /**
+     * 后退
+     */
+    doBack() {
         this.$router.go(-1)
+    }
+
+    /**
+     * 去编辑
+     */
+    doEdit() {
+        this.$router.push('/basicEdit')
     }
 }
