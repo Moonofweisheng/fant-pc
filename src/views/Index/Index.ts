@@ -8,6 +8,6 @@ export default class Index extends Vue {
     /**
      * 登出事件
      */
-    doLogout() { }
+    doLogout() {}
 
 }
