@@ -22,8 +22,18 @@ const routes: Array<RouteConfig> = [
             },
             {
                 path: '/basicForm', name: 'basicForm',
-                meta: { title: '基础编辑', keepAlive: false, parent: 'form' },
+                meta: { title: '基础表单', keepAlive: false, parent: 'form' },
                 component: () => import('../views/BasicForm/BasicForm.vue')
+            },
+            {
+                path: '/complexForm', name: 'complexForm',
+                meta: { title: '复杂表单', keepAlive: false, parent: 'form' },
+                component: () => import('../views/ComplexForm/ComplexForm.vue')
+            },
+            {
+                path: '/stepForm', name: 'stepForm',
+                meta: { title: '复杂表单', keepAlive: false, parent: 'form' },
+                component: () => import('../views/StepForm/StepForm.vue')
             }
         ]
     }

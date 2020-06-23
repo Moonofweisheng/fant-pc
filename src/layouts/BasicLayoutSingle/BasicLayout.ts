@@ -14,7 +14,9 @@ export default class BasicLayout extends Vue {
             },
             {
                 name: '表单页', icon: 'iconfont el-icon-location', index: 'form', hasSecMenu: true, children: [
-                    { name: '基础表单', url: '/basicForm', index: 'basicForm' }
+                    { name: '基础表单', url: '/basicForm', index: 'basicForm' },
+                    { name: '复杂表单', url: '/complexForm', index: 'complexForm' },
+                    { name: '分步表单', url: '/stepForm', index: 'stepForm' }
                 ]
             },
             {

@@ -1,5 +1,5 @@
 import { Component, Vue } from 'vue-property-decorator'
-import BasicLayout from "@/layouts/SimpleLayoutSingle/SimpleLayout.vue";
+import BasicLayout from "@/layouts/BasicLayoutSingle/BasicLayout.vue";
 
 @Component({
     components: { BasicLayout }
