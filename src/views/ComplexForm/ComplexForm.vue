@@ -87,23 +87,43 @@
                                 <el-col :span="12">
                                     <el-form-item label="商品主图" prop="code">
                                         <span class="tip">- 图片上传建议：688*424像素，PNG/JPG格式，大小不超过1M</span>
-                                        <el-upload action="https://jsonplaceholder.typicode.com/posts/" list-type="picture-card" :on-preview="handlePictureCardPreview"
-                                            :on-remove="handleRemove">
-                                            <i class="el-icon-plus"></i>
+                                        <el-upload action="https://jsonplaceholder.typicode.com/posts/" list-type="picture-card" class="example-uploader"
+                                            :on-success="handleImgSuccess" :before-upload="beforeImgUpload">
+                                            <i class="el-icon-plus example-uploader-icon"></i>
+                                            <span class="example-uploader-text">上传图片</span>
                                         </el-upload>
                                     </el-form-item>
                                 </el-col>
                                 <el-col :span="12">
                                     <el-form-item label="商品视频" prop="code">
                                         <span class="tip">- 视频比例建议1:1，支持 wmv/mp4/rmvb/avi；支持30秒以内时长；大小不超过30M</span>
-                                        <el-radio-group v-model="form.code">
-                                            <el-radio label="标准"></el-radio>
-                                            <el-radio label="称重"></el-radio>
-                                        </el-radio-group>
+                                        <el-upload action="https://jsonplaceholder.typicode.com/posts/" list-type="picture-card" class="example-uploader"
+                                            :on-success="handleVideoSuccess" :before-upload="beforeVideoUpload">
+                                            <i class="el-icon-plus example-uploader-icon"></i>
+                                            <span class="example-uploader-text">上传视频</span>
+                                        </el-upload>
                                     </el-form-item>
                                 </el-col>
                             </el-row>
                         </el-form>
+                    </template>
+                </detail-card>
+                <!-- <detail-card title="商品规格">
+                    <template slot="right">
+                        <el-row>
+                            <el-col :span="12">
+                                <el-select v-model="form.type" ref="type" multiple filterable allow-create default-first-option value-key="uuid" placeholder="请下拉选择或输入查询">
+                                    <el-option v-for="item in optionList" :key="item.uuid" :value="`${item.name}[${item.mobile}]`" :label="`${item.name}[${item.mobile}]`">
+                                        {{ item.name }}[{{ item.mobile }}]
+                                    </el-option>
+                                </el-select>
+                            </el-col>
+                        </el-row>
+                    </template>
+                </detail-card> -->
+                <detail-card title="图文详情">
+                    <template slot="right">
+                        <editor id="editor_id" height="300px" width="100%" :content="editorText" :loadStyleMode="false" @on-content-change="onContentChange"></editor>
                     </template>
                 </detail-card>
             </detail-view>
@@ -117,15 +137,58 @@
 
 <style lang="scss" scoped>
 .tip {
-    display: inline-block;
+    display: block;
     height: 32px;
     font-size: 12px;
     font-family: PingFangSC-Regular, PingFang SC;
     color: #79879e;
 }
 /deep/.el-col-12 {
-    /deep/.el-form-item__content {
+    /deep/.el-input {
         max-width: 416px;
+    }
+    /deep/.el-select {
+        max-width: 416px;
+    }
+}
+.example-uploader {
+    /deep/.el-upload {
+        border: 1px dashed #d9d9d9;
+        border-radius: 6px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+    /deep/.el-upload--picture-card {
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 80px;
+        height: 80px;
+        line-height: 0;
+    }
+    /deep/.el-upload:hover {
+        border-color: #409eff;
+    }
+    .example-uploader-text {
+        height: 16px;
+        font-size: 12px;
+        font-weight: 400;
+        color: #79879e;
+        line-height: 16px;
+    }
+    .example-uploader-icon {
+        font-size: 24px;
+        color: #8c939d;
+        width: 32px;
+        height: 32px;
+        line-height: 30px;
+        text-align: center;
+    }
+    /deep/.el-upload-list__item {
+        width: 80px;
+        height: 80px;
     }
 }
 </style>
