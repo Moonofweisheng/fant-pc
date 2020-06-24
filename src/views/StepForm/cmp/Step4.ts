@@ -1,18 +1,9 @@
 import { Component, Vue } from 'vue-property-decorator'
-import PageWrapper from "@/components/page-wrapper/PageWrapper.vue";
-import DetailView from "@/components/detail-view/DetailView.vue";
-import ListView from "@/components/list-view/ListView.vue";
-import DetailCard from "@/components/detail-card/DetailCard.vue";
-import Step1 from "./cmp/Step1.vue"
-import Step2 from "./cmp/Step2.vue"
-import Step3 from "./cmp/Step3.vue"
-import Step4 from "./cmp/Step4.vue"
-
 
 @Component({
-    components: { PageWrapper, DetailView, DetailCard, ListView, Step1, Step2, Step3, Step4 }
+    components: {}
 })
-export default class StepForm extends Vue {
+export default class Step4 extends Vue {
     active: number = 0 // 激活状态的步骤
     form = { // form表单绑定的内容
         code: '', // 门店code
