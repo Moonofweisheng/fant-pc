@@ -1,11 +1,6 @@
 module.exports = {
     publicPath: "./",
     lintOnSave: false,
-
-    chainWebpack: config => {
-        // 修复HMR
-        config.resolve.symlinks(true);
-    },
     css: {
         loaderOptions: {
             sass: {

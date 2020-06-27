@@ -1,48 +1,51 @@
 <template>
-    <el-form :model="form" :rules="rules" ref="basicForm" label-width="120px" class="example-form">
-        <el-form-item label="商品名称" prop="code">
-            <span class="tip">- 系统自动生成，可修改，最多不超过10个字符</span>
-            <el-input v-model="form.code"></el-input>
-        </el-form-item>
-        <el-form-item label="商品副标题" prop="name">
-            <span class="tip">撒打瞌睡打款收到师傅的</span>
-            <el-input ref="name" v-model="form.name"></el-input>
-        </el-form-item>
-        <el-form-item label="商品编码" prop="code">
-            <span class="tip">- 系统自动生成，可修改，最多不超过10个字符</span>
-            <el-input v-model="form.code"></el-input>
-        </el-form-item>
-        <el-form-item label="商品ID" prop="name">
-            <span class="tip">撒打瞌睡打款收到师傅的</span>
-            <el-input ref="name" v-model="form.name"></el-input>
-        </el-form-item>
-        <el-form-item label="门店类型" prop="type">
-            <el-select v-model="form.type" ref="type" filterable clearable value-key="uuid" placeholder="请下拉选择或输入查询">
-                <el-option v-for="item in optionList" :key="item.uuid" :value="`${item.name}[${item.mobile}]`" :label="`${item.name}[${item.mobile}]`">
-                    {{ item.name }}[{{ item.mobile }}]
-                </el-option>
-            </el-select>
-        </el-form-item>
-        <el-form-item label="商品ID" prop="name">
-            <span class="tip">撒打瞌睡打款收到师傅的</span>
-            <el-input ref="name" v-model="form.name"></el-input>
-        </el-form-item>
-        <el-button style="margin-top: 12px;margin-left:120px" type="primary" @click="next">下一步</el-button>
-        <el-button style="margin-left:16px" @click="next">上一步</el-button>
-    </el-form>
+    <div class="finished">
+        <i class="el-icon-check finished-icon"></i>
+        <span class="finished-text">操作成功</span>
+        <span class="finished-describe">新建表单成功啦新建表单成功啦新建表单成功啦新建表单成功啦</span>
+        <div class="finished-operator">
+            <el-button type="primary" @click="doCreate">再次新建</el-button>
+            <el-button style="margin-left:16px" @click="doDetail">查看详情</el-button>
+        </div>
+    </div>
 </template>
 
 <script lang='ts' src='./Step4.ts'></script>
 <style lang="scss" scoped>
-.example-form {
-    position: relative;
-    width: 560px;
-    margin: 0 auto;
-    /deep/.el-input {
-        max-width: 416px;
+.finished {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 24px;
+    .finished-icon {
+        height: 64px;
+        width: 64px;
+        text-align: center;
+        line-height: 62px;
+        border-radius: 50%;
+        font-weight: 600;
+        color: $--color-white;
+        background-color: $--color-success;
+        font-size: 30px;
+        margin-bottom: 12px;
     }
-    /deep/.el-select {
-        max-width: 416px;
+    .finished-text {
+        height: 32px;
+        font-size: 16px;
+        font-weight: 500;
+        color: $--color-black;
+        line-height: 32px;
+        margin-bottom: 20px;
+    }
+    .finished-describe {
+        text-align: center;
+        width: 240px;
+        height: 36px;
+        font-size: 12px;
+        color: #8c96a4;
+        line-height: 17px;
+        margin-bottom: 32px;
     }
 }
 </style>

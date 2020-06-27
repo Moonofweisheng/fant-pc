@@ -11,8 +11,7 @@ import ListModel from '@/model/example/ListModel';
         BasicLayout, PageWrapper, QueryCondition, ListView
     }
 })
-export default class BasicList extends Vue {
-    $refs: any
+export default class SkuList extends Vue {
     applyDate: string = '' // 申请日期
     orderDataList: ListModel[] = [] // 订单列表
     orderTotal: number = 0 // 单据总数
@@ -24,7 +23,7 @@ export default class BasicList extends Vue {
      * 搜索按钮点击事件
      */
     doSearch() {
-        ExampleApi.getList(this.applyDate).then((resp) => {
+        ExampleApi.getSkuList(this.applyDate).then((resp) => {
             this.orderDataList = resp.data
             this.orderTotal = resp.total
         }).catch((error) => {
@@ -44,7 +43,6 @@ export default class BasicList extends Vue {
      */
     doReset() {
         this.applyDate = ''
-        this.$refs.orderDataList.reset()
     }
 
     /**

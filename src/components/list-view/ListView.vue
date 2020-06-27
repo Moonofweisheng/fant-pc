@@ -1,12 +1,12 @@
 <template>
     <div class="list-view">
         <div class="toolbar">
-            <el-alert class="selected-btn" type="info" v-if="selectable" :closable="false">
+            <div class="selected-btn" type="info" v-if="selectable" :closable="false">
                 <span>已选中</span>
                 <span class="num">{{internalSelected.length}}</span>
                 <span>行</span>
                 <el-button type="text" @click="doCancel()">取消选中</el-button>
-            </el-alert>
+            </div>
             <slot name="actions" :selected="internalSelected"></slot>
             <div class="icons">
                 <slot name="icons"></slot>
@@ -40,6 +40,8 @@
         padding-bottom: 10px;
     }
     .selected-btn {
+        flex: 0 0 auto;
+        color: #4c5f7d;
         width: auto;
         display: inline-block;
         margin-right: 10px;

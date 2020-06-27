@@ -4,8 +4,8 @@ import { Vue, Prop, Component } from 'vue-property-decorator'
     name: 'QueryCondition'
 })
 export default class QueryCondition extends Vue {
-    @Prop({ type: Boolean, default: false }) opened: boolean
-    @Prop({ type: Boolean, default: true }) toggle: boolean // 允许折叠
+    opened: boolean = false // 是否展开
+    @Prop({ type: Boolean, default: false }) toggle: boolean // 允许折叠
     @Prop({ type: Boolean, default: true }) showButton: boolean // 是否显示查询重置按钮
     $refs: any
 
@@ -23,7 +23,7 @@ export default class QueryCondition extends Vue {
     }
 
     doSearch() {
-        this.$emit('search', this.opened)
+        this.$emit('search')
     }
 
     doReset() {
@@ -32,6 +32,5 @@ export default class QueryCondition extends Vue {
 
     doToggle() {
         this.opened = !this.opened
-        this.$emit('toggle', this.opened)
     }
 }

@@ -4,7 +4,7 @@ import { Component, Vue } from 'vue-property-decorator'
     components: {}
 })
 export default class Step3 extends Vue {
-    active: number = 0 // 激活状态的步骤
+    $refs: any
     form = { // form表单绑定的内容
         code: '', // 门店code
         name: '', // 门店名称
@@ -41,7 +41,24 @@ export default class Step3 extends Vue {
         address: [{ required: false, message: '请选择门店地址', trigger: 'blur' }]
     }
 
-    next() {
-        if (this.active++ > 3) this.active = 0;
+    /**
+     * 完成
+     */
+    doSubmit() {
+        this.$refs['step3'].validate((valid: any) => {
+            if (valid) {
+                this.$emit('submit')
+            } else {
+                console.log('error submit!!');
+                return false;
+            }
+        });
+    }
+
+    /**
+     * 上一步
+     */
+    doPreve() {
+        this.$emit('prevStep')
     }
 }

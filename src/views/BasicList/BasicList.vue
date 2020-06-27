@@ -36,7 +36,6 @@
             </query-condition>
         </template>
         <!-- 列表查询条件 结束 -->
-
         <!-- 列表主体表格 开始 -->
         <template slot="body">
             <list-view ref="orderDataList" :selectable="false" :data="orderDataList" :total="orderTotal" @load="doListLoad">

@@ -141,7 +141,7 @@
     height: 32px;
     font-size: 12px;
     font-family: PingFangSC-Regular, PingFang SC;
-    color: #79879e;
+    color: $--color-text-secondary;
 }
 /deep/.el-col-12 {
     /deep/.el-input {
@@ -175,7 +175,7 @@
         height: 16px;
         font-size: 12px;
         font-weight: 400;
-        color: #79879e;
+        color: $--color-text-secondary;
         line-height: 16px;
     }
     .example-uploader-icon {

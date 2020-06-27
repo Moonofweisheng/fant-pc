@@ -4,11 +4,22 @@ import ListModel from '@/model/example/ListModel'
 
 
 export default class ExampleApi {
+
   /**
    * 查询单据列表
    */
   static getList(applyDate: string): Promise<BaseResponse<ListModel[]>> {
     return ApiClient.server().post(`/example/getList`, { applyDate: applyDate }, {}).then((res) => {
+      return res.data
+    })
+  }
+
+
+  /**
+   * 查询商品单据列表
+   */
+  static getSkuList(applyDate: string): Promise<BaseResponse<ListModel[]>> {
+    return ApiClient.server().post(`/example/getSkuList`, { applyDate: applyDate }, {}).then((res) => {
       return res.data
     })
   }
