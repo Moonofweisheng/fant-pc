@@ -4,27 +4,8 @@
             <div class="logo">
                 <img class="logo-img" src="@/assets/logo.png" alt="logo">
             </div>
-            <el-menu :unique-opened="false" :default-active="activeMenu" background-color="#242633" text-color="#79879E" active-text-color="#FFFFFF">
-                <div v-for="(item,key) in menus" :key="key">
-                    <router-link :to="item.url" v-if="item.children.length === 0">
-                        <el-menu-item :index="item.index" ref="menuItem">
-                            <i :class="item.icon"></i>
-                            <span slot="title">{{item.name}}</span>
-                        </el-menu-item>
-                    </router-link>
-                    <el-submenu :index="item.index" v-else>
-                        <template slot="title">
-                            <i :class="item.icon"></i>
-                            <span>{{item.name}}</span>
-                        </template>
-                        <router-link v-for="(submenu,key) in item.children" :key="key" :to="submenu.url">
-                            <el-menu-item :index="submenu.index" ref="menuItem">
-                                <span slot="title">{{submenu.name}}</span>
-                            </el-menu-item>
-                        </router-link>
-                    </el-submenu>
-                </div>
-            </el-menu>
+            <slot name="sider">
+            </slot>
         </div>
         <div class="basic-layout-container">
             <header class="header">
@@ -49,9 +30,6 @@
         min-height: 100vh;
         flex: 0 0 auto;
         background: $--color-text-primary;
-        a {
-            text-decoration: none !important;
-        }
         .logo {
             display: flex;
             justify-content: center;

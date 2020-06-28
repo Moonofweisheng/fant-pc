@@ -16,9 +16,14 @@ const routes: Array<RouteConfig> = [
                 component: () => import('../views/BasicList/BasicList.vue')
             },
             {
-                path: '/skuList', name: 'basicList',
+                path: '/skuList', name: 'skuList',
                 meta: { title: '商品列表', keepAlive: false, parent: 'list' },
                 component: () => import('../views/SkuList/SkuList.vue')
+            },
+            {
+                path: '/orderList', name: 'orderList',
+                meta: { title: '商品列表', keepAlive: false, parent: 'list' },
+                component: () => import('../views/OrderList/OrderList.vue')
             },
             {
                 path: '/basicDetail', name: 'basicDetail',
