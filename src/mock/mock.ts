@@ -37,7 +37,7 @@ const getList = function () {
 }
 
 /**
- * 获取基础单据列表
+ * 获取商品列表
  */
 const getSkuList = function () {
     let resp = new BaseResponse()
