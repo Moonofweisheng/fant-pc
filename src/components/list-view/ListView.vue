@@ -1,7 +1,7 @@
 <template>
     <div class="list-view">
-        <div class="toolbar">
-            <div class="selected-btn" type="info" v-if="selectable" :closable="false">
+        <div class="toolbar" v-if="selectable">
+            <div class="selected-btn" type="info" :closable="false">
                 <span>已选中</span>
                 <span class="num">{{internalSelected.length}}</span>
                 <span>行</span>
@@ -12,26 +12,23 @@
                 <slot name="icons"></slot>
             </div>
         </div>
-        <el-table ref="table" :data="data" :row-key="rowKey" :stripe="stripe" :emptyText="emptyText"
-            :default-sort="internalDefaultSort" @selection-change="doSelectionChange" @sort-change="doSortChange">
-            <el-table-column v-if="selectable" type="selection" :selectable="checkSelectable"
-                :reserve-selection="reserveSelection"></el-table-column>
+        <el-table ref="table" :data="data" :row-key="rowKey" :stripe="stripe" :emptyText="emptyText" :default-sort="internalDefaultSort" @selection-change="doSelectionChange"
+            @sort-change="doSortChange">
+            <el-table-column v-if="selectable" type="selection" :selectable="checkSelectable" :reserve-selection="reserveSelection"></el-table-column>
             <slot></slot>
         </el-table>
-        <el-pagination class="pagination" layout="sizes, total, prev, pager, next" v-if="pageable&&!smallPage"
-            :current-page.sync="internalPage" :page-sizes="[10, 30, 50, 100]" :page-size="queryParam.limit"
-            :total="total" @size-change="doSizeChange" @current-change="doPageChange">
+        <el-pagination class="pagination" layout="sizes, total, prev, pager, next" v-if="pageable&&!smallPage" :current-page.sync="internalPage" :page-sizes="[10, 30, 50, 100]"
+            :page-size="queryParam.limit" :total="total" @size-change="doSizeChange" @current-change="doPageChange">
         </el-pagination>
 
-        <el-pagination class="pagination" layout="jumper,prev,next,total" v-if="pageable&&smallPage"
-            :current-page.sync="internalPage" :page-size="queryParam.limit" :total="total" @size-change="doSizeChange"
-            @current-change="doPageChange">
+        <el-pagination class="pagination" layout="jumper,prev,next,total" v-if="pageable&&smallPage" :current-page.sync="internalPage" :page-size="queryParam.limit" :total="total"
+            @size-change="doSizeChange" @current-change="doPageChange">
         </el-pagination>
     </div>
 </template>
 <script lang="ts" src="./ListView.ts"></script>
 <style lang="scss" scoped>
-@import "~fant2/packages/theme-chalk/src/common/var.scss";
+@import '~fant2/packages/theme-chalk/src/common/var.scss';
 
 .list-view {
     .toolbar {
