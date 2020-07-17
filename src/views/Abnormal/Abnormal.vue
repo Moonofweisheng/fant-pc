@@ -47,6 +47,8 @@
     justify-content: center;
 }
 .hint_content {
+    display: flex;
+    align-items: center;
     .hint_image {
         width: 196px;
         height: 196px;
