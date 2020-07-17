@@ -24,7 +24,6 @@
 <script lang='ts' src='./PageWrapper.ts'></script>
 
 <style lang='scss' scoped>
-
 .page-wrapper {
     display: flex;
     flex-direction: column;
@@ -32,6 +31,7 @@
     width: 100%;
     background: #ffffff;
     .page-header {
+        flex: 0 0 auto;
         height: 56px;
         width: 100%;
         box-sizing: border-box;
@@ -61,6 +61,7 @@
         padding: 20px 32px;
     }
     .page-body {
+        flex: 1 1 auto;
         width: 100%;
         box-sizing: border-box;
         padding: 0 32px;
