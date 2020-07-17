@@ -6,7 +6,7 @@ import { abnormalType, hintTitle, hintDescribe } from "@/model/abnormal/Abnormal
     components: { PageWrapper }
 })
 
-export default class BasicDetail extends Vue {
+export default class Abnormal extends Vue {
 
     status: string = ''
     // 提示图片

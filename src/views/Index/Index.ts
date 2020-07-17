@@ -25,7 +25,8 @@ export default class Index extends Vue {
             },
             {
                 name: '详情页', icon: 'iconfont el-icon-location', index: 'detail', hasSecMenu: true, children: [
-                    { name: '基础详情', url: '/basicDetail', index: 'basicDetail' }
+                    { name: '基础详情', url: '/basicDetail', index: 'basicDetail' },
+                    { name: '复杂详情', url: '/complexDetail', index: 'complexDetail' }
                 ]
             },
             {

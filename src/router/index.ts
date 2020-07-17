@@ -49,6 +49,11 @@ const routes: Array<RouteConfig> = [
                 path: '/abnormal/:abnormalStatus', name: 'abnormal',
                 meta: { title: '异常页', keepAlive: false, parent: 'abnormal' },
                 component: () => import('../views/Abnormal/Abnormal.vue')
+            },
+            {
+                path: '/complexDetail', name: 'complexDetail',
+                meta: { title: '复杂详情', keepAlive: false, parent: 'complexDetail' },
+                component: () => import('../views/ComplexDetail/ComplexDetail.vue')
             }
         ]
     }
