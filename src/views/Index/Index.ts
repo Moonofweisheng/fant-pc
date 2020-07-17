@@ -1,5 +1,6 @@
 import { Component, Vue } from 'vue-property-decorator'
 import BasicLayout from "@/layouts/BasicLayoutSingle/BasicLayout.vue";
+import { abnormalType } from "@/model/abnormal/AbnormalType"
 
 @Component({
     components: { BasicLayout }
@@ -29,12 +30,12 @@ export default class Index extends Vue {
             },
             {
                 name: '异常页', icon: 'iconfont el-icon-location', index: 'abnormal', hasSecMenu: true, children: [
-                    { name: '暂无内容', url: '/abnormal/暂无内容/暂无内容暂无内容暂无内容', index: 'noContent' },
-                    { name: '暂无任务', url: '/abnormal/暂无任务/暂无任务暂无任务暂无任务', index: 'noTask' },
-                    { name: '暂无搜索结果', url: '/abnormal/暂无搜索结果/暂无搜索结果暂无搜索结果暂无搜索结果', index: 'noSearchResult' },
-                    { name: '系统异常', url: '/abnormal/系统异常/系统异常系统异常系统异常', index: 'systemErr' },
-                    { name: '网络异常', url: '/abnormal/网络异常/网络异常网络异常网络异常', index: 'networkErr' },
-                    { name: '权限控制', url: '/abnormal/权限控制/权限控制权限控制权限控制', index: 'rightControl' },
+                    { name: '暂无内容', url: `/abnormal/${abnormalType.noContent}`, index: 'noContent' },
+                    { name: '暂无任务', url: `/abnormal/${abnormalType.noTask}`, index: 'noTask' },
+                    { name: '暂无搜索结果', url: `/abnormal/${abnormalType.noSearchResult}`, index: 'noSearchResult' },
+                    { name: '系统异常', url: `/abnormal/${abnormalType.systemErr}`, index: 'systemErr' },
+                    { name: '网络异常', url: `/abnormal/${abnormalType.networkErr}`, index: 'networkErr' },
+                    { name: '权限控制', url: `/abnormal/${abnormalType.rightControl}`, index: 'rightControl' },
                 ]
             }
         ]

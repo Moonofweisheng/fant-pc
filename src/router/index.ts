@@ -46,9 +46,9 @@ const routes: Array<RouteConfig> = [
                 component: () => import('../views/StepForm/StepForm.vue')
             },
             {
-                path: '/abnormal/:hintTitle/:hintDescribe', name: 'abnormal',
+                path: '/abnormal/:abnormalStatus', name: 'abnormal',
                 meta: { title: '异常页', keepAlive: false, parent: 'abnormal' },
-                component: () => import('../views/abnormal/abnormal.vue')
+                component: () => import('../views/Abnormal/Abnormal.vue')
             }
         ]
     }
