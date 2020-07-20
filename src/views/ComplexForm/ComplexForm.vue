@@ -137,7 +137,8 @@
 
 <style lang="scss" scoped>
 .tip {
-    height: 32px;
+    display: block;
+    min-height: 32px;
     font-size: 12px;
     font-family: PingFangSC-Regular, PingFang SC;
     color: $--color-text-secondary;

@@ -23,13 +23,16 @@
 .basic-layout {
     display: flex;
     width: 100%;
-    min-height: 100%;
+    height: 100vh;
     overflow-x: hidden;
     .basic-layout-sider {
+        scrollbar-width: none; /* firefox */
+        -ms-overflow-style: none; /* IE 10+ */
         width: 200px;
-        min-height: 100vh;
+        height: 100%;
         flex: 0 0 auto;
         background: $--color-text-primary;
+        overflow-y: auto;
         .logo {
             display: flex;
             justify-content: center;
@@ -47,6 +50,10 @@
         /deep/.el-menu {
             border: none;
         }
+    }
+
+    .basic-layout-sider::-webkit-scrollbar {
+        display: none; /* Chrome Safari */
     }
 
     .basic-layout-container {
