@@ -154,5 +154,12 @@
       }
     }
   }
+  .complexDetail-bottom {
+    border-bottom: 0;
+    .el-menu--horizontal>.el-menu-item {
+      height: 55px;
+      line-height: 55px;
+    }
+  }
 }
 </style>
