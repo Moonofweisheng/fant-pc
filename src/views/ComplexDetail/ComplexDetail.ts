@@ -1,28 +1,23 @@
 import { Component, Vue } from 'vue-property-decorator'
 import PageWrapper from "@/components/page-wrapper/PageWrapper.vue";
+import ExampleApi from '@/http/example/ExampleApi';
+import ListModel from '@/model/example/ListModel';
 
 @Component({
     components: { PageWrapper }
 })
 export default class ComplexDetail extends Vue {
-    tableData: Array<object> = [{
-        date: '2016-05-02',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1518 弄'
-    }, {
-        date: '2016-05-04',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1517 弄'
-    }, {
-        date: '2016-05-01',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1519 弄'
-    }, {
-        date: '2016-05-03',
-        name: '王小虎',
-        address: '上海市普陀区金沙江路 1516 弄'
-    }]
+    skuDataList: ListModel[] = []
     activeIndex = "1"
+    applyDate = ''
+
+    mounted() {
+        ExampleApi.getList(this.applyDate).then((resp) => {
+            this.skuDataList = resp.data
+        }).catch((error) => {
+            console.log(error);
+        })
+    }
 
     // 切换菜单项
     handleSelect() { }

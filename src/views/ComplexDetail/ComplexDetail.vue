@@ -122,22 +122,22 @@
             商品信息
           </div>
           <div class="bottomForm-content">
-            <el-table :data="tableData" :stripe='false' style="width: 100%">
-              <el-table-column prop="date" label="主图">
+            <el-table :data="skuDataList" :stripe='false' style="width: 100%">
+              <el-table-column prop="appId" label="主图">
               </el-table-column>
-              <el-table-column prop="name" label="商品编码">
+              <el-table-column prop="consignee" label="商品编码">
               </el-table-column>
-              <el-table-column prop="address" label="商品名称">
+              <el-table-column prop="created" label="商品名称">
               </el-table-column>
-              <el-table-column prop="address" label="规格">
+              <el-table-column prop="flowNo" label="规格">
               </el-table-column>
-              <el-table-column prop="address" label="数量">
+              <el-table-column prop="memberInfo" label="数量">
               </el-table-column>
-              <el-table-column prop="address" label="单位">
+              <el-table-column prop="realAmount" label="单位">
               </el-table-column>
-              <el-table-column prop="address" label="单价/¥">
+              <el-table-column prop="sysState" label="单价/¥">
               </el-table-column>
-              <el-table-column prop="address" label="小计">
+              <el-table-column prop="type" label="小计">
               </el-table-column>
             </el-table>
           </div>
