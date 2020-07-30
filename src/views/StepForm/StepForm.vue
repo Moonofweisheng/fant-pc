@@ -35,7 +35,8 @@
 <style lang="scss" scoped>
 .example-steps {
     position: relative;
-    width: 1040px;
+    max-width: 1040px;
+    width: 80%;
     margin: 0 auto 32px;
     text-align: center;
 }

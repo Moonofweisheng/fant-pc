@@ -12,7 +12,7 @@
                 <slot name="icons"></slot>
             </div>
         </div>
-        <el-table ref="table" :data="data" :row-key="rowKey" :stripe="stripe" :emptyText="emptyText" :default-sort="internalDefaultSort" @selection-change="doSelectionChange"
+        <el-table ref="table" fit :data="data" :row-key="rowKey" :stripe="stripe" :emptyText="emptyText" :default-sort="internalDefaultSort" @selection-change="doSelectionChange"
             @sort-change="doSortChange">
             <el-table-column v-if="selectable" type="selection" :selectable="checkSelectable" :reserve-selection="reserveSelection"></el-table-column>
             <slot></slot>
